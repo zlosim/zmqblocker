@@ -9,5 +9,6 @@ s = ctx.socket(zmq.PULL)
 s.bind("tcp://0.0.0.0:{}".format(sys.argv[1]))
 print("blocking port {}".format(sys.argv[1]))
 while True:
-    time.sleep(1)
+    msg = s.recv_json()
+    print(msg)
 
