@@ -9,4 +9,4 @@ RUN apk update && apk add --no-cache zeromq-dev gcc g++ libzmq cython && pip ins
 ADD block.py /app/block.py
 EXPOSE $PORT
 
-CMD ["python", "block.py", "$PORT"]
+CMD ["sh", "-c", "python block.py $PORT"]

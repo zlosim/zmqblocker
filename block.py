@@ -3,6 +3,7 @@ import time
 import sys
 
 
+print(sys.argv)
 ctx = zmq.Context.instance()
 s = ctx.socket(zmq.PULL)
 s.bind("tcp://0.0.0.0:{}".format(sys.argv[1]))
